@@ -1,0 +1,75 @@
+body {
+	height: 100vh;
+	widows: 100vw;
+	margin: 0;
+	background-image: url('tgv-indemnisation.jpg');
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	font-family: 'Helvetica Neue', sans-serif;
+}
+
+.container {
+	height: 100vh;
+	width: 100vw;
+	padding: 5vh;
+}
+
+h1 {
+	font-family: 'Helvetica Neue', sans-serif;
+	text-transform: uppercase;
+	display: inline-block;
+	padding: 2.5vh;
+	color: #fff;
+	background: linear-gradient(90deg, #7C216F, #E21C2A);
+	width: 20vw;
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 23vw;
+    height: 4vh;
+    background-color: #fff;
+    padding-top: 2vh;
+    font-size: 1.5vh;
+}
+
+.dropdown span {
+	margin-left: 3vw;
+}
+
+.dropdown img {
+	right: 1.5vw;
+	position: absolute;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    width: 23vw;
+    height: 70vh;
+    margin-top: 2vh;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.choix {
+	height: 10vh;
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-left: 3vw;
+}
+
+.choix:hover {
+	background-color: #7C216F;
+	color: #fff;
+}
