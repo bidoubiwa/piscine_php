@@ -2,18 +2,22 @@
 <?PHP
 function	sort_value($a,$b)
 {
-	if (ctype_alnum($a) && !ctype_alnum($b))
-			return -1;
-	else if (!ctype_alnum($a) && ctype_alnum($b))
+	$tab = "abcdefghijklmnopqrstuvwxyz0123456789 !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~";
+	$i = 0;
+	while (isset($a[$i]) && isset($b[$i]))
+	{
+		if (strpos($tab, strtolower($a[$i])) - strpos($tab, strtolower($b[$i])) > 0)
 			return 1;
-	else if(is_numeric($a) && !is_numeric($b))
-        return 1;
-    else if(!is_numeric($a) && is_numeric($b))
+		else if (strpos($tab, strtolower($a[$i])) - strpos($tab, strtolower($b[$i])) < 0)
 			return -1;
-    else
-        return (strtolower($a) < strtolower($b)) ? -1 : 1;
+		else
+			$i++;
+	}
+	if (isset($a[$i]) && !isset($b[$i]))
+		return 1;
+	else
+		return -1;
 }
-
 $tab = [];
 for ($i = 1; $i < count($argv); $i++)
 {
