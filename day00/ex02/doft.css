@@ -1,0 +1,186 @@
+body {
+	background-color: rgb(80, 80, 80); 
+}
+
+/* HEADER */
+
+header {
+	display: flex;
+    justify-content: space-between;
+    width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: rgb(144, 144, 144);
+    position: relative;
+    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.header_logo img {
+	height: 125px;
+
+}
+.header_loupe
+{
+    position: absolute;
+    right: 33px;
+    top: 11px;
+}
+.header_icons
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.header_icons a img
+{
+	height: 20px;
+	width: 20px;
+}
+
+/* MAIN CONTENT */
+
+article {
+	width: 1400px;
+	height: 700px;
+	
+	display: flex;
+	justify-content: space-around;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top : 10px;
+	padding : 10px;
+}
+
+/* MIDDLE */
+#main {
+	background: #909090;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+	z-index: 1;
+	height: 562px;
+	position : relative;
+}
+
+#main img {
+	height: 562px;
+	width: 1000px;
+}
+
+/* LEFT SIDEBAR */
+
+#left {
+	box-sizing: content-box;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 430px;
+	width: 150px;
+	background: #909090;
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+	border-radius: 10px;
+}
+#left img {
+	width: 75px;
+	height: 75px;
+}
+
+#left img:hover, #objects img:hover {
+	border: solid red;
+}
+
+/* RIGHT SIDEBAR */ 
+ #objects 
+ {
+ 	box-sizing: content-box;
+ 	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 150px;
+	height: 430px;
+	padding-top: 10px;
+	background: #909090;
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+	border-radius: 10px;
+}
+
+#objects img
+{
+	margin-top: 10px;
+	width: 70px;
+}
+
+#objects div:hover {
+	border: solid red;
+}
+
+#wall {
+	margin-top: 15px;
+	width: 120px;
+	height: 70px;
+	background-image: url(resources/brick.jpg);
+}
+
+
+/* BLOC */
+
+#bloc {
+	width: 500px;
+	background-color: #81ec81;
+	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.75);
+	border-radius: 10px;
+	height: 150px;
+	z-index: 10;
+	position: absolute;
+    left: -233px;
+    bottom: -72px;
+}
+
+#bloc p {
+	margin: 0 10px;
+	font-size: 14pt;
+	width: 78%;
+}
+
+#bloc p > .big_letter {
+	font-size: xx-large;
+}
+
+#bloc input[name=text] {
+	margin-left: 10px;
+	width: 53%;
+}
+
+#link1 a {
+	 width: 129px;
+    height: 200px;
+    position: absolute;
+    left: 332px;
+    z-index: 10;
+    bottom: 52px;
+    opacity: 0.5;
+}
+
+#link2 a {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+    right: 17px;
+    z-index: 10;
+    bottom: 109px;
+}
+#link2 a:hover, #link1 a:hover  {
+	border: 2px solid red;
+}
+.computer_shadow
+{
+	text-shadow: 6px 5px 4px rgba(255, 0, 0, 0.7);
+}
