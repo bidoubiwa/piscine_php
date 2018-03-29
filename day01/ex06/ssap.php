@@ -4,7 +4,7 @@ $tab = [];
 for ($i = 1; $i < count($argv); $i++)
 {
 	$new = trim($argv[$i]);
-	$new = preg_replace('/(\s{2,})/'," ", $new);
+	$new = preg_replace('/( {2,})/'," ", $new);
 	$new = explode(" ", $new);
 	foreach ($new as $elem)
 		$tab[] = $elem;

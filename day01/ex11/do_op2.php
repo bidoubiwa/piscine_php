@@ -22,7 +22,7 @@ function	mod($a, $b)
 }
 function	parse_arguments($str)
 {
-		$re = '/^ *([0-9]+) *([\+\-\/\%\*]) *([0-9]+) *$/';
+		$re = '/^ *(-?[0-9]+) *([\+\-\/\%\*]) *(-?[0-9]+) *$/';
 		preg_match($re, $str, $match);
 		return($match);
 }
