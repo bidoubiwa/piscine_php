@@ -2,40 +2,24 @@
 <?PHP
 if ($argc > 1)
 {
-		libxml_use_internal_errors(true);
-		$doc = new DOMDocument();
-		if (!$doc->loadHTMLFile($argv[1], LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD))
-		{
-				echo "Fichier non existant ou n'est pas du HTML\n";
-				exit();
-		}
-		$elements = $doc->getElementsByTagName("a");
-		foreach($elements as $elem)
-		{
-			$cpy = $elem->cloneNode(TRUE);
-			$childs = false;
-			if ($cpy->hasChildNodes())
-				$childs = $cpy->childNodes;
-			$elem->textContent = strtoupper($elem->nodeValue);
-			if ($childs)
-			{
-				var_dump($childs->length);
-				if ($childs->length > 1)
-				{
-					$first = true;
-					foreach($childs as $child)
-					{
-					if ($first)
-						$first = false;
-					else
-						$elem->appendChild($child);
-					var_dump($child);
-					}
-				}
-			}
-		}
-		echo $doc->saveHTML();
-			//			$elem->nodeValue =  strtoupper($elem->nodeValue) . "\n";
-		//$doc->saveHTMLfile("new_file.html");
+	if ($argc < 2 || !file_exists($argv[1]))
+		exit();
+	$read = fopen($argv[1], 'r');
+	$page = "";
+	while ($read && !feof($read))
+		$page .= fgets($read);
+	$find_a = "/<a[^>]*>[\s\S]?([A-Za-z\s]*)[\s\S]*<\/a>/U";
+	$page = preg_replace_callback($find_a, function($tab)
+	{
+		$tab[0] = preg_replace_callback("/>([^><]*)</U", function($word){
+			return strtoupper($word[0]);
+		}, $tab[0]);
+		$tab[0] = preg_replace_callback("/title=\"(.*)\"/U", function($title){
+			$title[0] = str_replace($title[1], strtoupper($title[1]), $title[0]);	
+			return $title[0];
+		}, $tab[0]);
+		return $tab[0];	
+	}, $page);
+	echo $page;
 }
 ?>

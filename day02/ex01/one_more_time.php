@@ -65,10 +65,13 @@ if ($argc > 1)
 				$month = month_to_number($matches[3]);
 				$year = format_year($matches[4]);
 				$day = frenchDay_to_english($matches[1]);
+				
+				//var_dump($day);
 				$date = "$day, $year-$month-$matches[2] $matches[5]:$matches[6]:$matches[7]";
-				$datetime = new DateTime($date);
-				/*var_dump($date);
-				echo "\n";
+				//var_dump($date);
+				$datetime = new DateTime($date, new DateTimeZone('Europe/Paris'));
+				//var_dump($date);
+				/*echo "\n";
 				var_dump($datetime->getTimestamp());
 				var_dump($datetime->format("l, Y-m-d H:i:s"));
 				echo "\n";*/
