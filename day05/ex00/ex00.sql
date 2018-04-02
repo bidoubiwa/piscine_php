@@ -1,1 +1,1 @@
-CREATE DATABASE db_cvermand;
+CREATE DATABASE 'db_cvermand';
