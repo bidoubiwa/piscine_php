@@ -10,16 +10,12 @@ if ($_GET["action"] == "set")
 }	
 else if ($_GET["action"] == "get")
 {
-	if ($_GET['name'])
+	if ($_GET['name'] && $_COOKIE[$_GET["name"]])
 	{
 		$name = $_GET["name"];
 		echo $_COOKIE[$name]."\n";
 	}
 }
 else if ($_GET["action"] == "del")
-{
-	$name = $_GET["name"];
-	setcookie($name,"", time() - 1);
-	var_dump($_COOKIE[$name]);
-}
+	setcookie($_GET["name"], NULL, -1);
 ?>
