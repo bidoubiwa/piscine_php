@@ -1,2 +1,1 @@
-USE db_cvermand;
-SELECT ROUND(SUM(nb_seats)/COUNT(*)) as average FROM cinema;
+SELECT ROUND(AVG(nb_seats)) as average FROM cinema;

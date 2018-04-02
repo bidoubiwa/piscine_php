@@ -1,4 +1,3 @@
-USE db_cvermand;
 SELECT UPPER(u.last_name) as 'NAME', u.first_name, s.price 
 		FROM user_card u 
 		INNER JOIN member m 

@@ -1,2 +1,1 @@
-USE db_cvermand;
-DELETE FROM ft_table LIMIT 4;
+DELETE FROM ft_table LIMIT 5;
