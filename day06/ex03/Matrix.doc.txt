@@ -1,0 +1,45 @@
+
+<- Matrix ----------------------------------------------------------------------
+The Matrix class handles geometric transformation on instances of  Vector or Vertex. 
+
+A instance can be constructed in the following cases :
+
+The Identity matrix which will create a IDENTITY matrix : 
+new Matrix( array( 'preset' => Matrix::IDENTITY ))
+
+The Translation Matrix which will need a Vector instance
+new Matrix( array( 'preset' => Matrix::TRANSLATION, 'vtc' => $vector ) );
+
+The Scale Matrix which will need a scale factor
+new Matrix( array( 'preset' => Matrix::SCALE, 'scale' => 10.0 ) );
+
+The Rotations Matrix which will need for each rotation an Angle;
+X rotation : 
+new Matrix( array( 'preset' => Matrix::RX, 'angle' => M_PI_4 ) );
+Y rotation : 
+new Matrix( array( 'preset' => Matrix::RY, 'angle' => M_PI_2 ) );
+Z rotation : 
+new Matrix( array( 'preset' => Matrix::RZ, 'angle' => 2 * M_PI ) );
+
+And a Projection Matrix which will need 
+- a Field of View : fov
+- a ratio : ratio
+- a minumum position : near
+- a maximum position : far
+for exemple : 
+new Matrix( array( 'preset' => Matrix::PROJECTION,
+					'fov' => 60,
+					'ratio' => 1.5,
+					'near' => 1.0,
+					'far' => -50.0 ) );
+
+Any other construction use is undefined behavior.
+
+The class provides the following methods : 
+
+Matrix mult(Matrix $rhs);
+Calculate the product of two Matrices and returns the resulting Matrix in a new Matrix instance.
+
+Vertex transformVertex(Vertex $vtx)
+Apply a matrix on the given Vertex instance and return the resulting Vertex in a new vertex instance.
+---------------------------------------------------------------------- Matrix ->

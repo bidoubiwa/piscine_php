@@ -1,0 +1,41 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class handles Vectors as we know them form Mathematics.
+
+An instance can be constucted from either a mandatory 'dest' Vertex
+new Vector(array("dest" => $myVertex));
+
+Or with additionnly but optionnaly a origin Vertex : 
+new Vector(array("dest" => $myVertex, "orig" => $myOtherVertex));
+
+X, y, z are private and can not be changed once initialized. There are no setters. 
+
+The Class provides the following methods : 
+
+float magnitude();
+Calculate the magnitude of the current Vector and return the result in float;
+
+Vector normalize()
+Calculate the normalized version of the current Vector instance and returns a new Vector which is normalized.
+
+Vector add(Vector $rhs)
+Add two vectors together and return the resulted vector in a new Vector instance.
+
+Vector sub(Vector $rhs)
+Substract two vectors together and return the resulted vector in a new Vector instance.
+
+Vector opposite()
+Calculate the opposite of the actual Vector and returns it in a new Vector instance.
+
+Vector scalarProduct($k)
+Apply a scalar Product on the actual Vector and returns it in a new Vector instance.
+
+float dotProduct(Vector $rhs)
+Calculate the dot Product of the actual Vector instance and the Given vector instance and return the float value. 
+
+float cos(Vector $rhs)
+Calculate the cosinus of the actual Vector instance and the given vector instance and return the radian in float value.
+
+Vector crossProduct(Vector $rhs)
+Apply a cross product on the actual Vector instance and the given vector instance and return the resulted Vector in a new vector instance.
+---------------------------------------------------------------------- Vector ->

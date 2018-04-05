@@ -1,0 +1,21 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles VERTEX points. 
+
+An instance can be constructed with a X, a Y and a Z value. A W and a Color can be optionnaly added.
+If W is not given its default value will be 1.00.
+If color is not given a Color instance of White will be added as default value.
+new Vertex (array ("x" -> 1.0, "y" => 2.0, "z" => 3.0 ))
+
+With W : 
+new Vertex (array ("x" -> 1.0, "y" => 2.0, "z" => 3.0, "w" => 3.00))
+
+With Color :
+new Vertex (array ("x" -> 1.0, "y" => 2.0, "z" => 3.0, "color" => $myColor))
+
+The values are not private and can be accessed with each getter.
+
+Each AXIS (x, y, z, w) value is converted to a float before being initialized into the instance. 
+The color is an instance of the Color Class.
+
+---------------------------------------------------------------------- Vertex ->
