@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Todo or not to do</title>
+</head>
+<body>
+<div id="ft_list"></div>
+<button>New</button>
+<script>
+    function chargeCookie()
+    {
+        var cook = document.cookie;
+        if (cook)
+        {
+            cook = JSON.parse(cook);
+            cook.forEach(function(elem){
+               addToDo() 
+            });
+        }
+    }
+    function updateCookie(str)
+    {
+        var todo = ft_list.children;
+        var newCookie = [];
+        for (var i = 0; i < todo.length; i++)
+            newCookie.unshift(todo[i].innerHTML);
+        document.cookie = JSON.stringify(newCookie);
+    }
+    function addToDo(todoText)
+    {
+        var newTd = document.createElement("div");
+        todoText = document.createTextNode(todoText);
+        newTd.appendChild(todoText);
+        ft_list.prepend(newTd);
+        updateCookie(todoText);
+    }
+    document.addEventListener('click',function(e){
+        if(e.target && e.target.parentNode.id == "ft_list"){
+            e.target.remove();
+    }});
+    document.addEventListener("load", chargeCookie);
+    var ft_list = document.querySelector("#ft_list");
+    var button = document.querySelector("button").addEventListener("click", function(){
+         var todoText = prompt("New : ", "test");
+        addToDo(todoText);
+    });
+    
+</script>
+</body>
+</html>

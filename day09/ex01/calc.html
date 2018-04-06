@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculatrice</title>
+</head>
+
+<body>
+<input type="text" id="leftentry">
+<select id="opperator">
+    <option value="add">+</option>
+    <option value="min">-</option>
+    <option value="mult">*</option>
+    <option value="div">/</option>
+    <option value="mod">%</option>
+</select>
+<input type="text" id="rightentry">
+<input type="submit" id="submitme" value="Try me !">
+</body>
+<script>
+    function add(a, b){ return a + b; }
+    function min(a, b) {return a - b; }
+    function mult(a, b) {return a * b; }
+    function div(a, b) {return a / b; }
+    function mod(a, b) {return a % b; }
+    var funcs = {
+        "add" : add,
+        "min" : min,
+        "div" : div,
+        "mult" : mult,
+        "mod" : mod
+    };
+    function launchCal()
+    {
+        event.preventDefault();
+        var left = parseInt(document.querySelector("#leftentry").value);
+        var right = parseInt(document.querySelector("#rightentry").value);
+        var opp = document.querySelector("option:checked").value;
+        if (left >= 0 && right >= 0)
+        {
+            if ((opp == "div" || opp == "mod") && right == 0)
+            {
+                var str = "It's over 9000!";
+                alert(str);
+                console.log(str);
+            }
+            else
+            {
+                var res = funcs[opp](left, right);
+                alert(res);
+                console.log(res);
+            }
+        }
+        else
+            alert("Error :(");
+    }
+    setInterval(function(){alert("Please, use me...")}, 30000);
+    var sub = document.getElementById("submitme").addEventListener("click", launchCal);
+</script>
+</html>
